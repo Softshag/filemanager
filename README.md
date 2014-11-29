@@ -11,7 +11,7 @@
   <select name="select">
     <option value="1">Option 1</option>
   </select>
-  <textarea name="textarea"></textarea>
+  <textarea name="textarea" data-form-validate="isLength" data-form-validate-args="10,50"></textarea>
 </form>
 
 ```
