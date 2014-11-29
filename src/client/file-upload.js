@@ -151,7 +151,7 @@ var FileUpload = (function () {
 
   /**
    * FileUpload defaults
-   * @type {Object}
+   * type {Object}
    * @memberOf FileUpload
    */
   FileUpload.defaults = {

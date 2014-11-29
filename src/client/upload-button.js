@@ -42,20 +42,32 @@ var UploadButton = (function () {
     });
   }
 
-
-  UploadButton.prototype.upload = function () {
+  /**
+   * Upload files
+   * @param {Function}
+   * @memberof UploadButton
+   */
+  UploadButton.prototype.upload = function (done) {
     var errors = {},
         self = this;
     this._executing = true;
     this.trigger('start');
     eachAsync(this.files, function (file, next) {
       self._upload.upload(file,{},next);
-    }, function () {
-
+    }, function (error) {
+      if (done) {
+        done(error);
+      }
+      self.files = [];
+      self.el.value = null;
     });
 
   };
 
+  /**
+   * Dispose the object. Detaches event handlers
+   * @memberof UploadButton
+   */
   UploadButton.prototype.dispose = function () {
     this._upload.off();
     this.el.removeEventListener('change');
@@ -64,7 +76,6 @@ var UploadButton = (function () {
 
 
   function onError (file, error) {
-
     this.trigger('error',file, error);
   }
 

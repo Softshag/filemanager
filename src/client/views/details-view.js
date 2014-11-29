@@ -19,8 +19,9 @@ var DetailsView = (function (__super) {
         size: null,
         mime: null
       };
-      
+
       this.$el.html(this.template(json));
+      
       return this;
     }
   });

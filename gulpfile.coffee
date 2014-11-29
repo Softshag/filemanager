@@ -26,11 +26,6 @@ gulp.task 'clean', ->
   gulp.src './dist/*', read: false
   .pipe clean()
 
-gulp.task 'docs', ->
-  gulp.src('./src/client/*.js')
-  .pipe jsdoc('docs')
-
-
 gulp.task 'lint', ->
   gulp.src('./src/client/*.js')
   .pipe jshint()
@@ -43,6 +38,4 @@ gulp.task 'watch', ['build'], ->
 gulp.task 'default', ['lint', 'build', 'docs', 'compress']
 
 requireDir = require('require-dir')
-
-#// Require all tasks in gulp/tasks, including subfolders
 requireDir('./gulp/tasks', { recurse: true })

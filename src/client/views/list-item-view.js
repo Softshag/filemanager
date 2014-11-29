@@ -17,11 +17,15 @@ var ListItemView = (function (__super) {
       }
     },
     render: function () {
+      this.undelegateEvents();
+
       var json = this.model.toJSON();
       if (json.path.length > 30)
         json.path = json.path.substring(0,30) + '...';
+
       this.$el.html(this.template(json));
       this.delegateEvents();
+
       return this;
     },
     remove: function () {

@@ -31,6 +31,7 @@ var ListView = (function (__super) {
   }
 
   ListView.prototype.render = function () {
+    this.undelegateEvents();
 
     this.$el.html(this.template());
     this._listView = this.$('.fm-resource-list');
@@ -42,6 +43,7 @@ var ListView = (function (__super) {
     this.delegateEvents();
 
     this._listView.addClass(this.options.style + '-style');
+
     return this;
   };
 
