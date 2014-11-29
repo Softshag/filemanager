@@ -1,0 +1,91 @@
+@import list
+@import detailsview
+@import images
+
+.file-btn
+  position relative
+  height 100%
+  display inline-block
+  overflow hidden
+  //width 40px
+  input
+    position: absolute
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    //filter: alpha(opacity=0);
+    //z-index 2
+
+
+.list-icon
+  sprite($list)
+
+.grid-icon
+  sprite($grid)
+
+.add-icon
+  sprite($add)
+
+.remove-icon
+  sprite($remove)
+
+.search-icon
+  sprite($search)
+
+.pdf-mime-icon
+  sprite($pdf)
+
+.doc-mime-icon
+  sprite($doc)
+
+.image-mime-icon
+  sprite($image)
+
+//div
+// box-sizing border-box
+.fm-container
+  position relative
+  box-sizing border-box
+  min-width 400px
+  min-height 300px
+  height: 100%
+  width: 100%
+  .add-btn, .remove-btn
+    float right
+    margin-left 5px
+  .fm-container-inner
+
+    box-sizing border-box
+    //background-color green
+    width 100%
+    height 100%
+
+    .fm-list-container
+      absolute top left
+      margin 0
+      display inline-block
+      height 100%
+      width 60%
+      //background-color blue
+      //position relative
+
+    .fm-details-container
+      absolute top right
+      margin 0
+      display inline-block
+      height 100%
+      width 39%
+      background-color red
+
+  .fm-button-bar
+    height 40px
+    width 100%
+    absolute bottom left
+
+  .btn
+    button(gray, 'small')
+    box-shadow 5px

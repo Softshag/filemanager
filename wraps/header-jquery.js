@@ -1,0 +1,4 @@
+
+var Resource = {};
+
+Resource.$ = $;

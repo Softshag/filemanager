@@ -1,0 +1,113 @@
+
+.fm-resource-list-container
+  width 100%
+  height 230px
+  position relative
+  //overflow-y auto
+  //overflow-x hidden
+  .fm-resource-list-toolbar
+    //absolute top left
+    width 100%
+    height 30px
+    padding-bottom 4px
+    border-bottom 1px solid #eee
+    .fm-toolbar-btn
+      height 100%
+      button(#eee)
+      border 1px solid #ccc
+      padding 0px 10px 0 10px
+      &.search-btn
+        float right
+        margin-left 5px
+      &.disabled
+        button-disabled()
+  .search-input
+    display block
+    width 100%
+    padding 10px
+    font-size 16px
+    margin-top 5px
+  .progress-bar
+    width 100%
+    height 2px
+    .progress
+      height 100%
+      background-color blue
+  .fm-resource-list-container-inner
+    //height 100%
+
+    width 100%
+    height 100%
+    position relative
+    overflow-y auto
+    overflow-x hidden
+    margin-top 5px
+
+  .fm-resource-list
+    list-style none
+    margin 0
+    padding 0
+
+    .fm-resource-item
+      cursor pointer
+      .fm-resource-item-thumbnail
+        display block
+        .fm-resource-thumbnail
+          width 32px
+          height 32px
+      &:hover
+        background-color #eee;
+
+      &.selected
+        background-color #ee9
+      &.hidden
+        transition all .4s
+        display none
+
+    &.list-style
+      .fm-resource-item
+        transition all .5s ease-in-out
+        padding 5px
+        position relative
+        &.deleting
+          transform scale(1,0)
+
+        .fm-resource-item-thumbnail
+          display inline-block
+          .fm-resource-thumbnail
+            display block
+            margin auto
+            border none
+
+
+    &.collection-style
+      .fm-resource-item
+        box-sizing border-box
+        height 80px
+        width 102px
+        float left
+        transition all .5s ease-in-out
+        font-size 10px
+        display inline-block
+        padding 10px
+
+        border 1px solid #eee
+        margin 4px
+        position relative
+        overflow hidden
+
+        &.deleting
+          transform scale(0,0)
+        .fm-resource-item-thumbnail
+          .fm-resource-thumbnail
+            display block
+            margin auto
+            border none
+
+        span
+          display block
+          text-overflow ellipsis
+          text-align center
+          width 100%
+          margin auto
+          text-wrap nowrap
